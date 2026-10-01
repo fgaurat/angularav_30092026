@@ -1,0 +1,15 @@
+<h2>Todo Form</h2>
+
+
+
+
+<form [formGroup]="todoForm" (ngSubmit)="submitTodo()" >
+
+    <input type="text" formControlName="title">
+    <br/>
+    <input type="checkbox" formControlName="completed">
+    <br/>
+    <button type="submit">Ajouter</button>
+
+
+</form>

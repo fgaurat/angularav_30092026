@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "tdd-app": {
+    "routing-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,32 +56,16 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tdd-app:build:production"
+              "buildTarget": "routing-app:build:production"
             },
             "development": {
-              "buildTarget": "tdd-app:build:development"
+              "buildTarget": "routing-app:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular/build:unit-test"
-        },
-        "storybook": {
-          "builder": "@storybook/angular-vite:start-storybook",
-          "options": {
-            "configDir": ".storybook",
-            "browserTarget": "tdd-app:build",
-            "port": 6006
-          }
-        },
-        "build-storybook": {
-          "builder": "@storybook/angular-vite:build-storybook",
-          "options": {
-            "configDir": ".storybook",
-            "browserTarget": "tdd-app:build",
-            "outputDir": "storybook-static"
-          }
         }
       }
     }

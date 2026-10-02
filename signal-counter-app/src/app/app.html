@@ -1,0 +1,27 @@
+<h1>Counter Signal</h1>
+<br>
+{{ title() }}
+<br>
+<button (click)="setTo3()">Set to 3</button>
+<br>
+<button (click)="increment()">Increment</button>
+<br>
+<h2>{{count()}}</h2>
+<h2>{{doubleCount()}}</h2>
+
+<hr>
+
+<app-show/>
+<app-inc/>
+<hr>
+
+<button (click)="loadUsers()">Load users</button>
+<ul>
+@for(user of users.value();track user.id){
+
+    <li>{{user.name}}, {{user.email}}</li>
+}
+</ul>
+
+<hr>
+<app-hello name="Fred"/>

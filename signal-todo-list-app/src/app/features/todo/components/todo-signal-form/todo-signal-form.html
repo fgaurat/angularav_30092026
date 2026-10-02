@@ -1,0 +1,20 @@
+<h2>todo-signal-form</h2>
+
+
+<form (submit)="submit($event)">
+    <input type="text" [formField]="todoForm.title" >
+    @if(todoForm.title().invalid() && todoForm.title().touched() ){
+        <span>Title required !</span>
+    }
+    <br>
+    <input type="checkbox" [formField]="todoForm.completed">
+    <br>
+    <input 
+    type="submit" 
+    value="Add"
+    [disabled] ="todoForm().invalid()"
+    [attr.aria-disabled]="todoForm().invalid()"
+    [attr.aria-busy]="todoForm().submitting()"
+    >
+
+</form>

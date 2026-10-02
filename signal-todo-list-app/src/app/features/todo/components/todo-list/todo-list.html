@@ -1,0 +1,18 @@
+<h2>Todos</h2>
+
+@if (todoService.isLoading()) {
+    <h2>Chargement ...</h2>
+} @else {
+  <table>
+    @for (todo of todos(); track todo.id) {
+      <tr>
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.completed }}</td>
+        <td>
+          <button (click)="delete(todo)">Delete</button>
+        </td>
+      </tr>
+    }
+  </table>
+}
